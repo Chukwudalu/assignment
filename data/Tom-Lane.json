@@ -1,0 +1,10 @@
+{
+    "transcript_id": "9",
+    "firstname": "Tom",
+    "lastname": "Lane",
+    "grades": [
+        { "course": "ACIT1515", "mark": 75 },
+        { "course": "ACIT1620", "mark": 80 },
+        { "course": "ACIT1630", "mark": 74 }
+    ]
+}

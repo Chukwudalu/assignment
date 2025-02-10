@@ -1,0 +1,78 @@
+[
+    {
+        "transcript_id": "10",
+        "firstname": "Ayesha",
+        "lastname": "Anzer",
+        "grades": [
+            {
+                "course": "ACIT1515",
+                "mark": 80
+            },
+            {
+                "course": "ACIT1620",
+                "mark": 81
+            },
+            {
+                "course": "ACIT1630",
+                "mark": 86
+            }
+        ]
+    },
+    {
+        "transcript_id": "12",
+        "firstname": "Chris",
+        "lastname": "Harris",
+        "grades": [
+            {
+                "course": "ACIT1515",
+                "mark": 60
+            },
+            {
+                "course": "ACIT1620",
+                "mark": 60
+            },
+            {
+                "course": "ACIT1630",
+                "mark": 60
+            }
+        ]
+    },
+    {
+        "transcript_id": "4",
+        "firstname": "Donna",
+        "lastname": "Turner",
+        "grades": [
+            {
+                "course": "ACIT1515",
+                "mark": 90
+            },
+            {
+                "course": "ACIT1620",
+                "mark": 83
+            },
+            {
+                "course": "ACIT1630",
+                "mark": 92
+            }
+        ]
+    },
+    {
+        "transcript_id": "9",
+        "firstname": "Tom",
+        "lastname": "Lane",
+        "grades": [
+            {
+                "course": "ACIT1515",
+                "mark": 75
+            },
+            {
+                "course": "ACIT1620",
+                "mark": 80
+            },
+            {
+                "course": "ACIT1630",
+                "mark": 74
+            }
+        ]
+    }
+]
