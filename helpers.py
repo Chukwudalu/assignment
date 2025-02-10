@@ -48,7 +48,7 @@ def get_highest_transcript_id(transcripts):
     """
         This returns the highest transcript id in the transcript database
 
-        Parameters -> none
+        Parameters -> transcripts
         Returns -> transcript id
         Type -> Integer
     """
