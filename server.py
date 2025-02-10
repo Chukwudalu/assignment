@@ -11,7 +11,10 @@ def merge_files():
     """
         get all the data from each json file.
         append each to a list
-        Write all to a neew file as a json object
+        Write all to a neew file as a json object 
+
+        Parameters -> None
+        Returns -> None
     """
     
     transcripts = []
@@ -34,6 +37,9 @@ merge_files()
 def get_all():
     """
        This function returns all trascripts 
+
+       Parameters -> None
+       Returns -> all transcipts 
     """
     try:
         with open("data/transcripts.json", "r") as file:
@@ -51,6 +57,9 @@ def get_by_id(id):
     """
         This function converts the transcript from json to a dictionary and returns 
         the transcript that has the transcript with matching id.
+
+        Parameters -> transcript_id
+        Returns -> transcript
     """
     with open("data/transcripts.json", "r") as file:
         data = json.load(file)
@@ -66,6 +75,9 @@ def edit():
     """
         This function updates a transcript if it already exists. If not,
         it creates a new one
+
+        Parameters -> none
+        Returns -> status message
     """
     transcript = request.get_json()
     try:
@@ -87,10 +99,7 @@ def edit():
             
     except (ValueError, json.JSONDecodeError, FileNotFoundError):
         return Response(json.dumps({"message":"An error occured in the server. Please try again later"}), 500)
-    
-# app.add_url_rule('/', 'get_all', get_all)
-# app.add_url_rule('/<int:id>', 'get_by_id', get_by_id)
-# app.add_url_rule('/edit', 'edit', edit, methods=['PUT'])
+
 
 
 if __name__ == '__main__':

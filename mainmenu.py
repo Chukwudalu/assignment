@@ -11,16 +11,31 @@ class MainMenu:
         self.return_to_main_menu = False
 
     def handle_incorrect_selection(self, menu_selection):
+        """
+            Checks to see if the user enters a valid menu selection
+
+            Parameters -> menu selection. e.g (a, b, c or d)
+        """
         if menu_selection not in self.main_menu_options:
             raise ValueError('Invalid selection. Try again.\n')
         self.main_menu_selection = menu_selection
 
 
     def view_all_students(self):
+        """
+            displays all transcripts
+
+            Parameters -> none
+        """
         print(student_transcript.transcript_cache)
     
 
     def choose_student(self):
+        """
+            defines logic for selecting a specific student/transcript
+
+            Parameters -> none
+        """
         student_menu = True
         transcript_id = input("Please enter the transcript id: ").lower()
         while student_menu:
@@ -56,9 +71,9 @@ class MainMenu:
                         print("All courses acheived an average of 50 or higher")
                     
                 elif student_option == 'c':
-                    self.return_to_main_menu = True
+                    break
 
-                previous_menu = input("\na. return previous menu\nb. return to main menu\nMake selection, a or b: ").lower()
+                previous_menu = input("\na. return to previous menu\nb. return to main menu\nMake selection, a or b: ").lower()
                 if previous_menu not in ['a', 'b']:
                     raise ValueError("Invalid selection. Returning to main menu.\n")
                 if previous_menu == 'a':
@@ -72,7 +87,12 @@ class MainMenu:
                 
 
     def add_student(self):
-      
+        """
+            Defines logic for adding a new student/transcript
+
+            Parameters -> none
+            Returns -> none
+        """
         first_name = input("Please enter first name: ").capitalize()
         last_name = input("Please enter last name: ").capitalize()
         # A while loop to ensure the user enters at least 2 courses
@@ -105,6 +125,12 @@ class MainMenu:
 
 
     def edit_student(self):
+        """
+            Defines logic for adding a editing student/transcript
+
+            Parameters -> none
+            Returns -> none
+        """
         transcript_id_valid = False
         edit_id = input("Please enter transcript id: ")
         for data in student_transcript.transcript_cache:

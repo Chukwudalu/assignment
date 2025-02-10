@@ -10,6 +10,10 @@ class Transcript:
 
     
     def get_all(self):
+        """
+            gets all the transcript data from the server
+            parameters -> None
+        """
         try:
             response = requests.get(self.server_base_url, timeout=6)
             response.raise_for_status()
@@ -45,6 +49,11 @@ class Transcript:
 
 
     def choose_student(self, transcript_id):
+        """
+            Lets user selects a specific transcript to view
+
+            Parameters -> transcript_id
+        """
         try:
             if not int(transcript_id):
                 raise ValueError
@@ -71,6 +80,11 @@ class Transcript:
 
 
     def edit_transcript(self, data):
+        """
+            Lets user edit a specific transcript in the database
+
+            Parameter -> transcript
+        """
         try:
             response = requests.put(f"{self.server_base_url}/edit", json=data)
             response.raise_for_status()
