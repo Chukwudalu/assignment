@@ -31,9 +31,6 @@ def exit_menu():
     return response.lower() == "n"
 
 
-def check_course_pass(value):
-    return value > 50
-
 def get_highest_transcript_id(transcripts):
     highest_id = 0
     for transcript in transcripts:
