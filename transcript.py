@@ -1,9 +1,14 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 class Transcript:
     def __init__(self):
-        self.server_base_url = "http://localhost:5000/"
+        self.server_base_url = os.getenv('SERVER_BASE_URL') #create a .env file and save your server url to it
         self.transcript_cache = []
         self.get_all()
     

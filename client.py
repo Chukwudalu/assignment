@@ -1,7 +1,10 @@
 
 from mainmenu import MainMenu
 from helpers import initial_options
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 
 def main():
