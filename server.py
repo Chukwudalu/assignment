@@ -51,7 +51,6 @@ def get_all():
         return Response(json.dumps({"message": "An error occured"}), 500)
 
 
-
 @app.get('/<int:id>')
 def get_by_id(id):
     """

@@ -96,29 +96,40 @@ class MainMenu:
         first_name = input("Please enter first name: ").capitalize()
         last_name = input("Please enter last name: ").capitalize()
         # A while loop to ensure the user enters at least 2 courses
-        two_courses = True
-        
-        while two_courses:
-            courses = input("Please enter at least two courses, seperated by a comma (','): ").replace(" ", "").split(',')
-            if len(courses) < 2:
-                print("The number of courses must be at least two")
-                has_two_courses = input("Are you enrolled in at least two courses ? Y/N: ").lower()
-                
-                if has_two_courses == "y":
-                    continue
-                elif has_two_courses == "n":
-                    raise ValueError("A transcript cannot be created with less than two courses. Please try again later. ")
-                    
+        grade_input_finish = False
+        grades = []
+    
+        while not grade_input_finish:  
+
+            grade = input("Please enter a course and a mark, seperated by a comma (',') OR enter 'Finish': ")
+
+            if grade.lower() == "finish":
+                if len(grades) >= 2:
+                    grade_input_finish = True
+                    break
                 else:
-                    raise ValueError('Invalid selection. Try again.\n')
-            break
+                    print("You need to enter at least two grades")
+                    continue
+            
+            grade = tuple(grade.replace(" ", "").split(','))
+            
+            if len(grade) != 2:
+                print("Invalid entry")
+                continue
+            
+            try:
+                temp_course_dict = {'course': grade[0], 'mark': int(grade[1])}
+                grades.append(temp_course_dict)
+            except:
+                raise ValueError('Mark should be of numeric type')
+            
         transcript_id = str(get_highest_transcript_id(student_transcript.transcript_cache) + 1)
         
         new_transcript = {
             "transcript_id": transcript_id,
             "firstname": first_name,
             "lastname": last_name,
-            "courses": courses
+            "grades": grades
         }
 
         student_transcript.edit_transcript(new_transcript)
